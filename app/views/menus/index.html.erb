@@ -1,14 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
+<div class="container-fluid">
 <h1>Menus</h1>
+  
+<%= link_to "New menu", new_menu_path %> <br>
 
-<div id="menus">
-  <% @menus.each do |menu| %>
-    <%= render menu %>
-    <p>
-      <%= link_to "Show this menu", menu %>
-    </p>
-  <% end %>
-</div>
+<table class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @menus.each do |menu| %>
+      <tr>
+        <td><%= menu.name %></td>
+        <td><%= menu.price %></td>
+        <td><%= link_to "Show this menu", menu %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to "New menu", new_menu_path %>
+
+
